@@ -4,9 +4,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
 
-const { Exception } = require("./utils");
 const globalError = require("./middleware/globalError");
 
 const app = express();
@@ -18,11 +16,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 
 // error handler
-app.all("*", (req, res, next) => {
-  return next(new Exception("Page not found", 404));
+app.all("*", (req, res) => {
+  return res.status(404).json({
+    status: "error",
+    message: "page not found !",
+  });
 });
 app.use(globalError);
 

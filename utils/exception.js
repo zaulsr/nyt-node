@@ -8,6 +8,7 @@ class HttpException extends Error {
     super(message);
 
     this.statusCode = statusCode || 500;
+    this.isOperational = true;
     this.status = "error";
     this.detail = detail;
 

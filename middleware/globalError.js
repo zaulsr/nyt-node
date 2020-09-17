@@ -2,6 +2,8 @@ module.exports = (err, req, res) => {
   const code = err.statusCode || 500;
   const status = err.status || "error";
 
+  console.log("tes");
+
   if (err.code === "ECONNREFUSED") {
     return res
       .status(500)
