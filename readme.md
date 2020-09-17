@@ -18,9 +18,9 @@ Before you getting started using this project.
 
 Get the article based on match character
 
-**URL** : `/search-article`
-**Method** : `GET`
-**Permissions required** : None
+**URL** : `/search-article`.
+**Method** : `GET`.
+**Permissions required** : None.
 **Params** :
 `search=string` optional,
 `sort=oldest|newest` optional,
@@ -31,10 +31,8 @@ Get the article based on match character
 ```json
 {
     "status": "success",
-    "data": {}.
-    "meta": {
-        .....
-    }
+    "data": {},
+    "meta": {}
 }
 ```
 
