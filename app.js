@@ -5,7 +5,7 @@ const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
 
-const globalError = require("./middleware/globalError");
+// const globalError = require("./middleware/globalError");
 
 const app = express();
 
@@ -24,6 +24,6 @@ app.all("*", (req, res) => {
     message: "page not found !",
   });
 });
-app.use(globalError);
+// app.use(globalError);
 
 module.exports = app;
